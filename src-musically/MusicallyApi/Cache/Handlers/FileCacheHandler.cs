@@ -45,6 +45,17 @@ namespace MusicallyApi.Cache.Handlers
             File.WriteAllText(fileName, JsonConvert.SerializeObject(cache, Formatting.Indented));
         }
 
+        /// <inheritdoc />
+        public void Delete(string email)
+        {
+            var fileName = GetFileName(email);
+
+            if (File.Exists(fileName))
+            {
+                File.Delete(fileName);
+            }
+        }
+
         private string GetFileName(string email)
         {
             var hash = Hash(email);

@@ -10,10 +10,16 @@
         MusicallyCache Load(string email);
 
         /// <summary>
-        ///     Saves the cache to the disk.
+        ///     Saves the cache.
         /// </summary>
         /// <param name="email">The email of the current account. It is hashed and used for the filename.</param>
         /// <param name="cache">The cache that has to be saved.</param>
         void Save(string email, MusicallyCache cache);
+
+        /// <summary>
+        ///     Deletes the cache.
+        /// </summary>
+        /// <param name="email">The email of the current account. It is hashed and used for the filename.</param>
+        void Delete(string email);
     }
 }

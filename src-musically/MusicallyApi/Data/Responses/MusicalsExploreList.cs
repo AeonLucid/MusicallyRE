@@ -27,19 +27,11 @@ namespace MusicallyApi.Data.Responses
             public string domain { get; set; }
             public string bizType { get; set; }
             public string action { get; set; }
-            public Nav previous { get; set; }
-            public Nav current { get; set; }
-            public Nav next { get; set; }
+            public ApiNavigation current { get; set; }
+            public ApiNavigation next { get; set; }
             public bool hasNext { get; set; }
             public List[] list { get; set; }
             public Extra extra { get; set; }
-        }
-
-        public class Nav
-        {
-            public string url { get; set; }
-            public object meta { get; set; }
-            public object hosts { get; set; }
         }
 
         public class Extra
@@ -64,7 +56,7 @@ namespace MusicallyApi.Data.Responses
             public string shareUri { get; set; }
             public string lowQualityVideoUri { get; set; }
             public string middleQualityVideoUri { get; set; }
-            public Url[] urls { get; set; }
+            public MusicalUrl[] Urls { get; set; }
             public string previewUri { get; set; }
             public int musicalType { get; set; }
             public int status { get; set; }
@@ -77,7 +69,7 @@ namespace MusicallyApi.Data.Responses
             public int commentNum { get; set; }
             public int shareNum { get; set; }
             public Track track { get; set; }
-            public Author1 author { get; set; }
+            public MusicalAuthor Author { get; set; }
             public int banned { get; set; }
             public bool ost { get; set; }
             public bool featured { get; set; }
@@ -90,30 +82,6 @@ namespace MusicallyApi.Data.Responses
             public int avgViewTime { get; set; }
             public Exploremeta exploreMeta { get; set; }
         }
-        
-        public class Author1
-        {
-            public long userId { get; set; }
-            public string userIdStr { get; set; }
-            public string userIdBid { get; set; }
-            public bool emailVerified { get; set; }
-            public string nickName { get; set; }
-            public string realName { get; set; }
-            public string displayName { get; set; }
-            public string icon { get; set; }
-            public bool isFeatured { get; set; }
-            public object tvAccount { get; set; }
-            public object livelyFeatured { get; set; }
-            public bool isPrivateAccount { get; set; }
-            public string userDesc { get; set; }
-            public bool disabled { get; set; }
-            public string handle { get; set; }
-            public object scm { get; set; }
-            public object insertTime { get; set; }
-            public object updateTime { get; set; }
-            public object relationsFromMe { get; set; }
-            public object relationsToMe { get; set; }
-        }
 
         public class Recommendmeta
         {
@@ -124,15 +92,6 @@ namespace MusicallyApi.Data.Responses
         public class Exploremeta
         {
             public string recommendType { get; set; }
-        }
-
-        public class Url
-        {
-            public int bitRate { get; set; }
-            public string videoUrl { get; set; }
-            public int qualityType { get; set; }
-            public string gearName { get; set; }
-            public int videoSize { get; set; }
         }
     }
 }

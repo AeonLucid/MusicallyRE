@@ -1,48 +1,45 @@
-﻿namespace MusicallyApi.Data.Responses
+﻿using MusicallyApi.Data.Models;
+
+namespace MusicallyApi.Data.Responses
 {
     public class UserSearch
     {
-        public bool success { get; set; }
-        public bool fallback { get; set; }
-        public Result result { get; set; }
-        public long timestamp { get; set; }
-        public bool fail { get; set; }
+        public bool Success { get; set; }
+        public bool Fallback { get; set; }
+        public ApiResult Result { get; set; }
+        public long Timestamp { get; set; }
+        public bool Fail { get; set; }
 
-        public class Result
+        public class ApiResult
         {
-            public string domain { get; set; }
-            public string bizType { get; set; }
-            public string action { get; set; }
-            public Nav current { get; set; }
-            public Nav next { get; set; }
-            public bool hasNext { get; set; }
-            public List[] list { get; set; }
+            public string Domain { get; set; }
+            public string BizType { get; set; }
+            public string Action { get; set; }
+            public ApiNavigation Current { get; set; }
+            public ApiNavigation Next { get; set; }
+            public bool HasNext { get; set; }
+            public ListItem[] List { get; set; }
         }
 
-        public class Nav
+        public class ListItem
         {
-            public string url { get; set; }
-        }
-
-        public class List
-        {
-            public long userId { get; set; }
-            public string userIdStr { get; set; }
-            public string userIdBid { get; set; }
-            public bool emailVerified { get; set; }
-            public string nickName { get; set; }
-            public string displayName { get; set; }
-            public string icon { get; set; }
-            public bool isFeatured { get; set; }
-            public bool isPrivateAccount { get; set; }
-            public bool addFriendWithoutConfirm { get; set; }
-            public string userDesc { get; set; }
-            public bool disabled { get; set; }
-            public string handle { get; set; }
-            public long insertTime { get; set; }
-            public object[] relationsFromMe { get; set; }
-            public object[] relationsToMe { get; set; }
-            public string realName { get; set; }
+            public long UserId { get; set; }
+            public string UserIdStr { get; set; }
+            public string UserIdBid { get; set; }
+            public bool EmailVerified { get; set; }
+            public string NickName { get; set; }
+            public string DisplayName { get; set; }
+            public string Icon { get; set; }
+            public bool IsFeatured { get; set; }
+            public bool IsPrivateAccount { get; set; }
+            public bool AddFriendWithoutConfirm { get; set; }
+            public string UserDesc { get; set; }
+            public bool Disabled { get; set; }
+            public string Handle { get; set; }
+            public long InsertTime { get; set; }
+            public object[] RelationsFromMe { get; set; }
+            public object[] RelationsToMe { get; set; }
+            public string RealName { get; set; }
         }
     }
 }

@@ -59,7 +59,7 @@ namespace MusicallyApi.Extensions
         /// <param name="request"></param>
         /// <param name="api"></param>
         /// <returns></returns>
-        public static IFlurlRequest WithSignHeaders(this IFlurlRequest request, MusicallyApi api)
+        public static IFlurlRequest WithSignHeaders(this IFlurlRequest request, MusicallyClient api)
         {
             var requestId = Guid.NewGuid().ToString();
             var requestInfo = JsonConvert.SerializeObject(new RequestInfo

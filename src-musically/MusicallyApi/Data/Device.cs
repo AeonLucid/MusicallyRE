@@ -2,15 +2,15 @@
 using System.Security.Cryptography;
 using System.Text;
 
-namespace MusicallyApi
+namespace MusicallyApi.Data
 {
-    public class MusicallyApiDevice
+    public class Device
     {
-        private MusicallyApiDevice() { }
+        private Device() { }
 
         public string DeviceId { get; set; }
 
-        public static MusicallyApiDevice Generate()
+        public static Device Generate()
         {
             // DeviceId
             var deviceIdBuilder = new StringBuilder();
@@ -28,7 +28,7 @@ namespace MusicallyApi
                 deviceIdBuilder.Append(hashStr[16]); // Checksum byte 2.
             }
 
-            return new MusicallyApiDevice
+            return new Device
             {
                 DeviceId = deviceIdBuilder.ToString()
             };

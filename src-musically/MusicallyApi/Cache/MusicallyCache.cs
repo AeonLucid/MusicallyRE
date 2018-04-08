@@ -1,8 +1,10 @@
-﻿namespace MusicallyApi.Cache
+﻿using MusicallyApi.Data;
+
+namespace MusicallyApi.Cache
 {
     public class MusicallyCache
     {
-        public MusicallyApiDevice Device { get; set; } = MusicallyApiDevice.Generate();
+        public Device Device { get; set; } = Device.Generate();
 
         public string AccessToken { get; set; }
     }

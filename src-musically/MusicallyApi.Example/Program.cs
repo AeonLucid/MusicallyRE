@@ -23,7 +23,7 @@ namespace MusicallyApi.Example
 
             // Create a musical.ly client.
             //      Using to dispose properly.
-            using (var client = new MusicallyApi(username, cacheHandler))
+            using (var client = new MusicallyClient(username, cacheHandler))
             {
                 DiscoverUserMe profile = null;
 

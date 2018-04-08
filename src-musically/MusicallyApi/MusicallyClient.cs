@@ -13,7 +13,7 @@ using Newtonsoft.Json;
 
 namespace MusicallyApi
 {
-    public class MusicallyApi : IDisposable
+    public class MusicallyClient : IDisposable
     {
         private readonly string _username;
         
@@ -21,7 +21,7 @@ namespace MusicallyApi
 
         private readonly FlurlClient _client;
 
-        public MusicallyApi(string username, ICacheHandler cacheHandler = null, ISignatureHandler signApi = null)
+        public MusicallyClient(string username, ICacheHandler cacheHandler = null, ISignatureHandler signApi = null)
         {
             ApiSignature = signApi ?? new SignatureHandlerLocal();
 
@@ -45,14 +45,28 @@ namespace MusicallyApi
 
         #region Cache
 
-        private void LoadCache()
+        /// <summary>
+        ///     Called automatically when constructing <see cref="MusicallyClient"/>.
+        /// </summary>
+        public void LoadCache()
         {
             Cache = _cacheHandler != null ? _cacheHandler.Load(_username) : new MusicallyCache();
         }
 
-        private void SaveCache()
+        /// <summary>
+        ///     Called automatically when signed in properly.
+        /// </summary>
+        public void SaveCache()
         {
             _cacheHandler?.Save(_username, Cache);
+        }
+
+        /// <summary>
+        ///     Have to call this manually.
+        /// </summary>
+        public void DeleteCache()
+        {
+            _cacheHandler.Delete(_username);
         }
 
         #endregion
@@ -260,8 +274,6 @@ namespace MusicallyApi
 
         public void Dispose()
         {
-            SaveCache();
-
             ApiSignature?.Dispose();
             _client?.Dispose();
         }
