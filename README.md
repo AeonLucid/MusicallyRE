@@ -9,7 +9,7 @@ MusicallyRE is an educational project to learn more about Reverse Engineering. T
 
 This repository consists of two projects.
 
-### src-musically [![AppVeyor](https://img.shields.io/appveyor/ci/AeonLucid/MusicallyRE/master.svg?maxAge=60)](https://ci.appveyor.com/project/AeonLucid/MusicallyRE)  [![NuGet](https://img.shields.io/nuget/v/MusicallyRE.svg?maxAge=60)](https://www.nuget.org/packages/MusicallyRE)
+### src-musically [![AppVeyor](https://img.shields.io/appveyor/ci/AeonLucid/MusicallyRE/master.svg?maxAge=60)](https://ci.appveyor.com/project/AeonLucid/MusicallyRE)  [![NuGet](https://img.shields.io/nuget/v/MusicallyApi.svg?maxAge=60)](https://www.nuget.org/packages/MusicallyApi)
 
 This contains C# code (netstandard 2.0) to communicate with the musical.ly rest API. Check the example to figure out how to use it.
 
