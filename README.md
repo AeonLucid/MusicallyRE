@@ -9,7 +9,7 @@ MusicallyRE is an educational project to learn more about Reverse Engineering. T
 
 This repository consists of two projects.
 
-### src-musically [Click](https://github.com/AeonLucid/MusicallyRE/tree/master/src-musically)
+### src-musically [![AppVeyor](https://img.shields.io/appveyor/ci/AeonLucid/MusicallyRE/master.svg?maxAge=60)](https://ci.appveyor.com/project/AeonLucid/MusicallyRE)  [![NuGet](https://img.shields.io/nuget/v/MusicallyRE.svg?maxAge=60)](https://www.nuget.org/packages/MusicallyRE)
 
 This contains C# code (netstandard 2.0) to communicate with the musical.ly rest API. Check the example to figure out how to use it.
 
@@ -40,7 +40,7 @@ Some noticeable features included in this library.
     - Follow
       - Delete follow
 
-### src-frida [Click](https://github.com/AeonLucid/MusicallyRE/tree/master/src-frida)
+### src-frida
 
 This contains python code to run a Rest API that communicates with a rooted android phone in order to retrieve a valid `X-Request-Sign5` signature. This is the first time ever that I used [frida](https://www.frida.re/) and I learned a lot from it.
 
