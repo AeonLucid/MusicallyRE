@@ -1,6 +1,6 @@
 ﻿namespace MusicallyApi.Sign
 {
-    public class AeonLucidSign
+    public class SignatureData
     {
         public string Sign { get; set; }
     }

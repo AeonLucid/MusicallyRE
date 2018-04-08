@@ -75,7 +75,7 @@ namespace MusicallyApi.Extensions
             });
 
             var requestInfoEncoded = Convert.ToBase64String(Encoding.UTF8.GetBytes(requestInfo));
-            var requestSignature = api.ApiSignature.GetSignature(requestInfoEncoded).GetAwaiter().GetResult();
+            var requestSignature = api.ApiSignature.GetSignature(requestInfoEncoded, api.Cache.Device.DeviceId).GetAwaiter().GetResult();
 
             return request
                 .WithHeader("X-Request-ID", requestId)

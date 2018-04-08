@@ -5,43 +5,47 @@ using Newtonsoft.Json;
 
 namespace MusicallyApi.Sign
 {
-    public class AeonLucidSignApi : IAeonLucidSignApi
+    /// <summary>
+    ///     Makes use of the frida API located here
+    ///     https://github.com/AeonLucid/MusicallyRE/tree/master/src-frida
+    /// </summary>
+    public class SignatureHandlerFrida : ISignatureHandler
     {
         private readonly string _apiUrl;
 
         private readonly HttpClient _client;
 
-        public AeonLucidSignApi()
+        public SignatureHandlerFrida()
         {
             _apiUrl = "http://127.0.0.1:5000/sign";
             _client = new HttpClient();
         }
 
-        public AeonLucidSignApi(string apiUrl)
+        public SignatureHandlerFrida(string apiUrl)
         {
             _apiUrl = apiUrl;
             _client = new HttpClient();
         }
 
-        public async Task<AeonLucidSign> GetSignature(string requestInfoBase64)
+        public async Task<SignatureData> GetSignature(string requestInfo, string deviceId)
         {
             try
             {
                 var content = new Dictionary<string, string>
                 {
-                    {"requestInfo", requestInfoBase64}
+                    {"requestInfo", requestInfo}
                 };
 
                 using (var response = await _client.PostAsync(_apiUrl, new FormUrlEncodedContent(content)))
                 {
                     var responseContent = await response.Content.ReadAsStringAsync();
 
-                    return JsonConvert.DeserializeObject<AeonLucidSign>(responseContent);
+                    return JsonConvert.DeserializeObject<SignatureData>(responseContent);
                 }
             }
             catch (HttpRequestException e)
             {
-                throw new AeonLucidSignException("Failed to retrieve a signature.", e);
+                throw new SignatureHandlerException("Failed to retrieve a signature.", e);
             }
         }
 

@@ -21,9 +21,9 @@ namespace MusicallyApi
 
         private readonly FlurlClient _client;
 
-        public MusicallyApi(string username, ICacheHandler cacheHandler = null, IAeonLucidSignApi signApi = null)
+        public MusicallyApi(string username, ICacheHandler cacheHandler = null, ISignatureHandler signApi = null)
         {
-            ApiSignature = signApi ?? new AeonLucidSignApi();
+            ApiSignature = signApi ?? new SignatureHandlerLocal();
 
             _username = username;
             _cacheHandler = cacheHandler;
@@ -39,7 +39,7 @@ namespace MusicallyApi
             LoadCache();
         }
 
-        public IAeonLucidSignApi ApiSignature { get; }
+        public ISignatureHandler ApiSignature { get; }
 
         public MusicallyCache Cache { get; private set; }
 
