@@ -2,6 +2,11 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>AeonLucid</Authors>
+    <PackageIconUrl>https://i.imgur.com/mKubd6c.png</PackageIconUrl>
+    <PackageProjectUrl>https://github.com/aeonlucid/musicallyre</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/AeonLucid/MusicallyRE/blob/master/LICENSE</PackageLicenseUrl>
+    <RepositoryUrl>https://github.com/aeonlucid/musicallyre</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
